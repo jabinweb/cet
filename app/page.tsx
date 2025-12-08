@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -177,18 +178,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Video */}
+            {/* Hero Image */}
             <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-linear-to-r from-(--accent-500)/30 to-(--primary-500)/30 rounded-3xl blur-2xl"></div>
                 <div className="relative rounded-3xl h-[500px] overflow-hidden shadow-2xl">
-                  <video 
-                    src="https://videos.pexels.com/video-files/3198345/3198345-hd_1920_1080_25fps.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
+                  <Image 
+                    src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop"
+                    alt="Teacher with children in classroom"
+                    fill
+                    className="object-cover"
+                    priority
                   />
                 </div>
               </div>
@@ -262,35 +262,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image Gallery Section */}
-      <section className="py-20 bg-linear-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block text-(--accent-600) font-semibold text-sm uppercase tracking-wider mb-3">Gallery</span>
-            <h2 className="font-(--font-playfair) text-3xl md:text-4xl font-bold text-gray-900">
-              Glimpses of CET
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div
-                key={num}
-                className="group aspect-square bg-linear-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300 hover:border-(--primary-400) transition-all cursor-pointer overflow-hidden"
-              >
-                <div className="text-center p-4">
-                  <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-white/80 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-400 text-sm font-medium">Image {num}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Special Features */}
       <section id="features" className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
@@ -307,18 +278,18 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
             {[
-              { icon: "🎵", name: "Action Songs" },
+              { icon: "🧒", name: "Child Psychology" },
+              { icon: "📚", name: "Bible Lesson Presentation" },
+              { icon: "💡", name: "Object Lessons" },
               { icon: "📖", name: "Storytelling" },
+              { icon: "🎵", name: "Action Songs" },
               { icon: "✂️", name: "Craft Time" },
               { icon: "🎭", name: "Puppetry" },
-              { icon: "💡", name: "Object Lessons" },
-              { icon: "📚", name: "Bible Lessons" },
               { icon: "❓", name: "Interactive Quizzes" },
               { icon: "✍️", name: "Creative Writing" },
               { icon: "💻", name: "Digital Tools" },
               { icon: "🎤", name: "Live Q&A" },
               { icon: "🤹", name: "Hand Tricks" },
-              { icon: "🧠", name: "Child Psychology" },
             ].map((feature, index) => (
               <div
                 key={index}
@@ -389,18 +360,29 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Dr. P. R. D. Prabhu", role: "Senior Trainer" },
-              { name: "Bensic Miranda", role: "Trainer" },
-              { name: "Anson P Elias", role: "Trainer" },
-              { name: "Sunny Keerithodu", role: "Trainer" },
+              { name: "Dr. P. R. D. Prabhu", role: "Senior Trainer", image: "/prabhu.png" },
+              { name: "Bensic Miranda", role: "Trainer", image: null },
+              { name: "Anson P Elias", role: "Trainer", image: "/anson.png" },
+              { name: "Sunny Keerithodu", role: "Trainer", image: "/sunny.png" },
             ].map((person, index) => (
               <div key={index} className="text-center group">
                 <div className="relative mb-4">
-                  <div className="w-28 h-28 md:w-36 md:h-36 mx-auto bg-linear-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300 group-hover:border-(--accent-400) transition-all overflow-hidden">
-                    <svg className="w-14 h-14 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
+                  {person.image ? (
+                    <div className="w-32 h-40 md:w-40 md:h-48 mx-auto rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
+                      <Image 
+                        src={person.image}
+                        alt={person.name}
+                        fill
+                        className="object-cover object-top rounded-2xl"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-32 h-40 md:w-40 md:h-48 mx-auto bg-linear-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300 group-hover:border-(--accent-400) transition-all">
+                      <svg className="w-14 h-14 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-semibold text-gray-900 text-lg">{person.name}</h3>
                 <p className="text-(--accent-600) text-sm font-medium">{person.role}</p>
@@ -490,27 +472,27 @@ export default function Home() {
             next generation for Christ. Registration is completely free!
           </p>
 
-          <div className="glass rounded-3xl p-8 md:p-10 max-w-lg mx-auto mb-10 border border-white/10">
-            <div className="space-y-5">
+          <div className="glass rounded-3xl p-5 sm:p-8 md:p-10 max-w-lg mx-auto mb-10 border border-white/10">
+            <div className="space-y-4 sm:space-y-5">
               <div className="flex justify-between items-center pb-4 border-b border-white/10">
-                <span className="text-(--primary-200) font-medium">Registration Fee</span>
-                <span className="text-2xl font-bold text-(--accent-400)">FREE</span>
+                <span className="text-(--primary-200) font-medium text-sm sm:text-base">Registration Fee</span>
+                <span className="text-xl sm:text-2xl font-bold text-(--accent-400)">FREE</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-(--primary-200)">Suggested Contribution</span>
-                <span className="font-semibold">₹500 (Optional)</span>
+              <div className="flex justify-between items-center gap-2">
+                <span className="text-(--primary-200) text-sm sm:text-base">Suggested Contribution</span>
+                <span className="font-semibold text-sm sm:text-base text-right">₹500 (Optional)</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-(--primary-200)">Age Requirement</span>
-                <span className="font-semibold">18 - 30 years</span>
+              <div className="flex justify-between items-center gap-2">
+                <span className="text-(--primary-200) text-sm sm:text-base">Age Requirement</span>
+                <span className="font-semibold text-sm sm:text-base">18 - 30 years</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-(--primary-200)">Duration</span>
-                <span className="font-semibold">3 Days</span>
+              <div className="flex justify-between items-center gap-2">
+                <span className="text-(--primary-200) text-sm sm:text-base">Duration</span>
+                <span className="font-semibold text-sm sm:text-base">3 Days</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-(--primary-200)">Language</span>
-                <span className="font-semibold">English & Malayalam</span>
+              <div className="flex justify-between items-center gap-2">
+                <span className="text-(--primary-200) text-sm sm:text-base">Language</span>
+                <span className="font-semibold text-sm sm:text-base">English & Malayalam</span>
               </div>
             </div>
           </div>
@@ -519,10 +501,10 @@ export default function Home() {
             href="https://forms.gle/bVtNjCTyBmnkeWcp6"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 bg-(--accent-400) hover:bg-(--accent-300) text-(--dark-bg) font-bold px-12 py-5 rounded-full text-xl transition-all shadow-lg hover:shadow-2xl hover:scale-105"
+            className="group inline-flex items-center justify-center gap-2 md:gap-3 bg-(--accent-400) hover:bg-(--accent-300) text-(--dark-bg) font-bold px-5 py-3.5 sm:px-8 sm:py-4 md:px-12 md:py-5 rounded-full text-sm sm:text-base md:text-xl transition-all shadow-lg hover:shadow-2xl hover:scale-105 mx-4 sm:mx-0"
           >
-            Register Now — It&apos;s Free
-            <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="whitespace-nowrap">Register Now — It&apos;s Free</span>
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
