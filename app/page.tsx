@@ -361,7 +361,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             {[
               { name: "Dr. P. R. D. Prabhu", role: "Senior Trainer", image: "/prabhu.png" },
-              { name: "Bensic Miranda", role: "Trainer", image: null },
+              { name: "Bensic Miranda", role: "Trainer", image: "/bensic.png" },
               { name: "Anson P Elias", role: "Trainer", image: "/anson.png" },
               { name: "Sunny Keerithodu", role: "Trainer", image: "/sunny.png" },
             ].map((person, index) => (
