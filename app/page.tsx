@@ -480,7 +480,7 @@ export default function Home() {
               </div>
               <div className="flex justify-between items-center gap-2">
                 <span className="text-(--primary-200) text-sm sm:text-base">Suggested Contribution</span>
-                <span className="font-semibold text-sm sm:text-base text-right">₹500 (Optional)</span>
+                <span className="font-semibold text-sm sm:text-base text-right">₹500</span>
               </div>
               <div className="flex justify-between items-center gap-2">
                 <span className="text-(--primary-200) text-sm sm:text-base">Age Requirement</span>
