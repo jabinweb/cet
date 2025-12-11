@@ -57,14 +57,6 @@ export default function Home() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="https://forms.gle/bVtNjCTyBmnkeWcp6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-(--accent-400) hover:bg-(--accent-300) text-(--dark-bg) font-semibold px-6 py-2.5 rounded-full text-sm transition-all shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              Register Free
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,14 +88,6 @@ export default function Home() {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="https://forms.gle/bVtNjCTyBmnkeWcp6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-(--accent-400) text-(--dark-bg) font-semibold px-6 py-3 rounded-full text-center"
-              >
-                Register Free
-              </a>
             </div>
           </div>
         )}
@@ -143,38 +127,27 @@ export default function Home() {
 
               {/* Event Info Cards */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
-                <div className="glass rounded-xl px-5 py-3 text-center">
+                <div className="glass rounded-xl px-5 py-3 text-center flex flex-col justify-center">
                   <p className="text-(--accent-400) text-xs font-semibold uppercase tracking-wider">Date</p>
                   <p className="text-white font-semibold">Jan 30 - Feb 1</p>
                 </div>
-                <div className="glass rounded-xl px-5 py-3 text-center">
+                <div className="glass rounded-xl px-5 py-3 text-center flex flex-col justify-center">
                   <p className="text-(--accent-400) text-xs font-semibold uppercase tracking-wider">Venue</p>
-                  <p className="text-white font-semibold">Faith Home</p>
+                  <p className="text-white font-semibold text-sm">Faith Home, <br></br>Kollakadavu, Chengannur</p>
                 </div>
-                <div className="glass rounded-xl px-5 py-3 text-center">
+                <div className="glass rounded-xl px-5 py-3 text-center flex flex-col justify-center">
                   <p className="text-(--accent-400) text-xs font-semibold uppercase tracking-wider">Age</p>
                   <p className="text-white font-semibold">18-30 Years</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a
-                  href="https://forms.gle/bVtNjCTyBmnkeWcp6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 bg-(--accent-400) hover:bg-(--accent-300) text-(--dark-bg) font-bold px-8 py-4 rounded-full text-lg transition-all shadow-lg hover:shadow-2xl hover:scale-105"
-                >
-                  Register for Free
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <a
+                {/* <a
                   href="#about"
                   className="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/50 text-white font-semibold px-8 py-4 rounded-full transition-all hover:bg-white/10"
                 >
                   Learn More
-                </a>
+                </a> */}
               </div>
             </div>
 
