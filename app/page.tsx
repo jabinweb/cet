@@ -157,7 +157,7 @@ export default function Home() {
                 <div className="absolute -inset-4 bg-linear-to-r from-(--accent-500)/30 to-(--primary-500)/30 rounded-3xl blur-2xl"></div>
                 <div className="relative rounded-3xl h-[500px] overflow-hidden shadow-2xl">
                   <Image 
-                    src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop"
+                    src="/hero.jpg"
                     alt="Teacher with children in classroom"
                     fill
                     className="object-cover"
